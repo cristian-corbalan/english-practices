@@ -128,11 +128,6 @@ const startGame = () => {
         input.focus();
         e.preventDefault();
 
-        if (input.value.trim() === '') {
-            alert('Tienes que ingresar un valor primero');
-            return;
-        }
-
         if (checkValue(verb)) {
             // Quito una posición
             gameVerbs.splice(pos, 1);
