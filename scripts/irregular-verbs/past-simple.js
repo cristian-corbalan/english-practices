@@ -4,7 +4,7 @@
 const contentContainer = document.getElementById('content');
 const showButton = document.querySelector('.list-group-item:nth-of-type(1) button')
 const startButton = document.querySelector('.list-group-item:nth-of-type(2) button')
-const continueButton = document.querySelector('.list-group-item:nth-of-type(3) button')
+// const continueButton = document.querySelector('.list-group-item:nth-of-type(3) button')
 const scoreTag = document.querySelector('.score')
 const verbLengthTag = document.querySelector('.verbs-length')
 const resultTag = document.querySelector('.result-li')
@@ -21,8 +21,8 @@ const clearActive = () => {
     showButton.classList.remove('disabled');
     startButton.classList.remove('active');
     startButton.classList.remove('disabled');
-    continueButton.classList.remove('active');
-    continueButton.classList.remove('disabled');
+    // continueButton.classList.remove('active');
+    // continueButton.classList.remove('disabled');
 }
 const showTable = () => {
     // Clear
