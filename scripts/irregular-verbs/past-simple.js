@@ -67,7 +67,7 @@ const showTable = () => {
 const checkValue = (verb) => {
     let value = input.value;
 
-    score += value === verb.pastSimple ? 10 : -10;
+    score += value === verb.pastSimple ? 20 : -5;
 
     let c = 'list-group-item ';
     c += value === verb.pastSimple ? 'list-group-item-success' : 'list-group-item-danger';
