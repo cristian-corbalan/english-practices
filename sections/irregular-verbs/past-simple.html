@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Pasado simple - Verbos irregulares</title>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="../../stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="../../stylesheets/main.css">
+
+  <script src="../../scripts/bootstrap.bundle.min.js"></script>
+  <script src="../../scripts/_arrays.js"></script>
+  <script src="../../scripts/_funciones.js"></script>
+  <script src="../../scripts/irregular-verbs/past-simple.js" defer></script>
+</head>
+<body>
+<header class="text-center container-fluid pt-2 pb-2">
+  <h1>English practices</h1>
+</header>
+
+<main class="container-fluid">
+  <h2 class="h2 text-center mb-4">Pasado simple - Verbos irregulares</h2>
+  <ul class="list-group mb-4">
+    <li class="list-group-item text-center ">
+      <button class="list-group-item list-group-item-action fw-bold">Mostrar tabla de verbos</button>
+    </li>
+    <li class="list-group-item text-center ">
+      <button class="list-group-item list-group-item-action fw-bold" data-bs-toggle="modal" data-bs-target="#formModal">Iniciar un nuevo juego</button>
+    </li>
+    <li class="list-group-item text-center ">
+      <button class="list-group-item list-group-item-action fw-bold" data-bs-toggle="modal" data-bs-target="#formModal">Continuar juego</button>
+    </li>
+  </ul>
+
+  <div id="content"></div>
+
+  <!-- Modal form -->
+  <div class="modal fade modal-lg" id="formModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Adivina el verbo</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fw-bold">Información de la partida:</p>
+          <ul class="list-group list-info mb-5">
+            <li class="list-group-item">Verbos restantes: <span class="verbs-length"></span></li>
+            <li class="list-group-item">Puntaje: <span class="score"></span></li>
+            <li class="list-group-item d-none result-li"></li>
+            <li class="list-group-item list-group-item-primary">Verbo a adivinar: <span class="verb fw-bold"></span></li>
+          </ul>
+
+          <form action="#" id="verb-form" class="pb-5">
+            <div class="mb-3">
+              <label for="input-verb" class="form-label">Verbo en pasado simple</label>
+              <input type="text" class="form-control" id="input-verb" aria-describedby="emailHelp">
+              <div id="emailHelp" class="form-text">El verbo tiene que estar igualmente escrito como se muestra en la tabla.</div>
+            </div>
+            <button type="submit" class="btn btn-success">Comparar</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+<!--          <button type="button" class="btn btn-primary">Guardar progreso</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="container-fluid">
+  <p>Good luck</p>
+  <p>Develop contact: ccorbalandw@gmail.com</p>
+</footer>
+</body>
+</html>
