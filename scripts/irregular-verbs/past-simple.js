@@ -113,9 +113,7 @@ const printInfo = (verb) => {
 const startGame = () => {
 
     // Reset array
-    // gameVerbs = [...verbs]
-    gameVerbs = [
-        {infinitive: 'be', pastSimple: 'was/were', pastParticiple: 'been'}]
+    gameVerbs = [...verbs]
 
     contentContainer.innerHTML = '';
 
