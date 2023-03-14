@@ -13,6 +13,8 @@ const form = document.querySelector('#verb-form')
 const input = document.querySelector('#input-verb')
 let gameVerbs = [...verbs]
 let score = 0;
+let pos;
+let verb;
 
 /* ---------- Functions --------------*/
 
@@ -101,7 +103,6 @@ const endGame = () => {
     // mBody.appendChild(buttonRestart);
 
 
-
 }
 
 const printInfo = (verb) => {
@@ -114,38 +115,15 @@ const startGame = () => {
 
     // Reset array
     gameVerbs = [...verbs]
+    score = 0;
 
     contentContainer.innerHTML = '';
 
     // Tengo que obtener el verbo a comparar
-    let pos = getRandomPosition(gameVerbs)
-    let verb = gameVerbs[pos];
+    pos = getRandomPosition(gameVerbs)
+    verb = gameVerbs[pos];
 
     printInfo(verb, null);
-
-    // Form
-    form.addEventListener('submit', (e) => {
-        input.focus();
-        e.preventDefault();
-
-        if (checkValue(verb)) {
-            // Quito una posición
-            gameVerbs.splice(pos, 1);
-            console.info(score);
-            if(gameVerbs.length === 0){
-                endGame();
-                return;
-            }
-        }
-
-        pos = getRandomPosition(gameVerbs)
-        verb = gameVerbs[pos];
-
-        printInfo(verb);
-
-        input.value = '';
-    })
-
 }
 
 /* ---------- Others --------------*/
@@ -163,4 +141,25 @@ startButton.addEventListener('click', function (e) {
     startGame();
 
     e.target.classList.add('active');
+})
+
+form.addEventListener('submit', (e) => {
+    input.focus();
+    e.preventDefault();
+
+    if (checkValue(verb)) {
+        // Quito una posición
+        gameVerbs.splice(pos, 1);
+        if (gameVerbs.length === 0) {
+            endGame();
+            return;
+        }
+    }
+
+    pos = getRandomPosition(gameVerbs)
+    verb = gameVerbs[pos];
+
+    printInfo(verb);
+
+    input.value = '';
 })
